@@ -1,3 +1,41 @@
 html{
     scroll-behavior: smooth;
 }
+
+.header.container-fluid{
+    background: #fff;
+}
+
+
+
+.jumbotron.jumbotron-fluid{
+    padding-top: 32px;
+    padding-bottom: 32px;
+}
+
+.lead{
+    font-size: 14px;
+    margin-left: 5px;
+    
+}
+
+.lead a{
+    color: #007bff;
+}
+
+hr.header{
+	border-top: 1px solid #8c8b8b;
+}
+
+.card{
+    margin-top: 16px;
+}
+.card-img-top{
+    width: 222px;
+    height: 140px;
+}
+
+.main-content{
+    border: 2px solid #8c8b8b;
+    border-radius: 10px;
+}
