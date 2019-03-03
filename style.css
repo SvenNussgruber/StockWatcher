@@ -6,8 +6,6 @@ html{
     background: #fff;
 }
 
-
-
 .jumbotron.jumbotron-fluid{
     padding-top: 32px;
     padding-bottom: 32px;
@@ -18,7 +16,6 @@ html{
     margin-left: 5px;
     
 }
-
 .lead a{
     color: #007bff;
 }
@@ -27,36 +24,38 @@ hr.header{
 	border-top: 1px solid #8c8b8b;
 }
 
-.card{
-    margin-top: 16px;
-}
-.companyLogo{
-    height: 32px;
-    width: 32px;
-    margin: auto;
-}
-
-#companyLogoTd{
-    width: 32px;
-}
-
 .tech.row{
     border: 2px solid #8c8b8b;
     border-radius: 10px;
 }
 
+/* Card CSS */
+.card{
+    margin-top: 16px;
+}
+
 .card-header{
-    padding-top: 4px;
-    padding-bottom: 4px;
-    padding-left: 10px;
-    padding-right: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 4px 5px 4px 5px;
     font-weight: bold;
+    font-size: 0.95rem;
+}
+.companyLogo{
+    height: 32px;
+    width: 32px; 
 }
 
 .card-body{
     padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-content: flex-start;
 }
-
 .card-title{
-    font-size: 1rem;
+    font-size: 0.95rem;
+}
+.card-text{
+    margin-bottom: 5px;
 }
