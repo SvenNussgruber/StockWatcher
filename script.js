@@ -12,7 +12,7 @@ function techInit(resultFromServer){
     console.log(resultFromServer);
 
     //Assign and populate Tech1 (AAPL) Card
-    let tech1Logo = document.getElementById('tech1Logo');
+    let aaplCard = document.getElementById('aaplCard');
     let tech1LatestPrice = document.getElementById('tech1LatestPrice');
     let tech1CompanyTitle = document.getElementById('tech1CompanyTitle');
     let tech1OpenPrice = document.getElementById('tech1OpenPrice');
@@ -20,8 +20,11 @@ function techInit(resultFromServer){
     let tech1Low52 = document.getElementById('tech1Low52');
     let tech1PERatio = document.getElementById('tech1PERatio');
 
-    
-    tech1Logo.src = resultFromServer.AAPL.logo.url;
+    if(Number.parseFloat(resultFromServer.AAPL.quote.change) < 0){
+        aaplCard.classList.remove('bg-success');
+        aaplCard.classList.add('bg-danger');
+    }
+
     tech1LatestPrice.innerHTML = `$${round(resultFromServer.AAPL.quote.latestPrice)}`;
     tech1CompanyTitle.innerHTML += `&nbsp(${round(resultFromServer.AAPL.quote.change)}%)`;
     tech1OpenPrice.innerHTML = `Open Price: &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp $${round(resultFromServer.AAPL.quote.open)}`;
@@ -30,7 +33,7 @@ function techInit(resultFromServer){
     tech1PERatio.innerHTML = `P/E Ratio: &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp ${resultFromServer.AAPL.quote.peRatio}`;
 
     //Assign and populate Tech2 (MSFT) Card
-    let tech2Logo = document.getElementById('tech2Logo');
+    let msftCard = document.getElementById('msftCard');
     let tech2LatestPrice = document.getElementById('tech2LatestPrice');
     let tech2CompanyTitle = document.getElementById('tech2CompanyTitle');
     let tech2OpenPrice = document.getElementById('tech2OpenPrice');
@@ -38,8 +41,11 @@ function techInit(resultFromServer){
     let tech2Low52 = document.getElementById('tech2Low52');
     let tech2PERatio = document.getElementById('tech2PERatio');
 
+    if(Number.parseFloat(resultFromServer.MSFT.quote.change) < 0){
+        msftCard.classList.remove('bg-success');
+        msftCard.classList.add('bg-danger');
+    }
     
-    tech2Logo.src = resultFromServer.MSFT.logo.url;
     tech2LatestPrice.innerHTML = `$${round(resultFromServer.MSFT.quote.latestPrice)}`;
     tech2CompanyTitle.innerHTML += `&nbsp(${round(resultFromServer.MSFT.quote.change)}%)`;
     tech2OpenPrice.innerHTML = `Open Price: &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp $${round(resultFromServer.MSFT.quote.open)}`;
@@ -48,7 +54,7 @@ function techInit(resultFromServer){
     tech2PERatio.innerHTML = `P/E Ratio: &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp ${resultFromServer.MSFT.quote.peRatio}`;
 
     //Assign and populate Tech3 (GOOGL) Card
-    let tech3Logo = document.getElementById('tech3Logo');
+    let googlCard = document.getElementById('googlCard');
     let tech3LatestPrice = document.getElementById('tech3LatestPrice');
     let tech3CompanyTitle = document.getElementById('tech3CompanyTitle');
     let tech3OpenPrice = document.getElementById('tech3OpenPrice');
@@ -56,8 +62,11 @@ function techInit(resultFromServer){
     let tech3Low52 = document.getElementById('tech3Low52');
     let tech3PERatio = document.getElementById('tech3PERatio');
 
+    if(Number.parseFloat(resultFromServer.GOOGL.quote.change) < 0){
+        googlCard.classList.remove('bg-success');
+        googlCard.classList.add('bg-danger');
+    }
     
-    tech3Logo.src = resultFromServer.GOOGL.logo.url;
     tech3LatestPrice.innerHTML = `$${round(resultFromServer.GOOGL.quote.latestPrice)}`;
     tech3CompanyTitle.innerHTML += `&nbsp(${round(resultFromServer.GOOGL.quote.change)}%)`;
     tech3OpenPrice.innerHTML = `Open Price: &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp $${round(resultFromServer.GOOGL.quote.open)}`;
@@ -66,7 +75,7 @@ function techInit(resultFromServer){
     tech3PERatio.innerHTML = `P/E Ratio: &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp ${resultFromServer.GOOGL.quote.peRatio}`;
 
     //Assign and populate Tech4 (TSLA) Card
-    let tech4Logo = document.getElementById('tech4Logo');
+    let tslaCard = document.getElementById('tslaCard');
     let tech4LatestPrice = document.getElementById('tech4LatestPrice');
     let tech4CompanyTitle = document.getElementById('tech4CompanyTitle');
     let tech4OpenPrice = document.getElementById('tech4OpenPrice');
@@ -74,14 +83,15 @@ function techInit(resultFromServer){
     let tech4Low52 = document.getElementById('tech4Low52');
     let tech4PERatio = document.getElementById('tech4PERatio');
 
+    if(Number.parseFloat(resultFromServer.TSLA.quote.change) < 0){
+        tslaCard.classList.remove('bg-success');
+        tslaCard.classList.add('bg-danger');
+    }
     
-    tech4Logo.src = resultFromServer.TSLA.logo.url;
     tech4LatestPrice.innerHTML = `$${round(resultFromServer.TSLA.quote.latestPrice)}`;
     tech4CompanyTitle.innerHTML += `&nbsp(${round(resultFromServer.TSLA.quote.change)}%)`;
     tech4OpenPrice.innerHTML = `Open Price: &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp $${round(resultFromServer.TSLA.quote.open)}`;
     tech4High52.innerHTML = `52 Week High: &nbsp $${round(resultFromServer.TSLA.quote.week52High)}`;
     tech4Low52.innerHTML = `52 Week Low: &nbsp&nbsp $${round(resultFromServer.TSLA.quote.week52Low)}`;
     tech4PERatio.innerHTML = `P/E Ratio: &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp ${resultFromServer.TSLA.quote.peRatio}`;
-
-
 }
