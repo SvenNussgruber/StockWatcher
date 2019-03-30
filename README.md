@@ -5,4 +5,4 @@ Built with HTML, CSS, Bootstrap, and vanilla JavaScript.
   
   
   
-![alt text](https://raw.githubusercontent.com/SvenNussgruber/StockWatcher/master/screenshot.PNG)
+![alt text](https://raw.githubusercontent.com/SvenNussgruber/stock-watcher/master/screenshot.PNG)
